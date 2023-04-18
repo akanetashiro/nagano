@@ -1,0 +1,59 @@
+<p class= "bg-muted">マイページ</p>
+
+<h4>登録情報</h4>
+
+  <div class="actions">
+    <button type="button" class="btn btn-primary">
+      編集する
+    </button>
+  </div>
+
+<table>
+  <% @customers do |f| %>
+    <th>
+      <td>氏名</td>
+      <td><%= @cusromers.last_name %><%= @customers.first_name %></td>
+    </th>
+    
+    <th>
+      <td>カナ</td>
+      <td><%= @cusromers.last_name_kana %><%= @cusromers.last_name_kana %></td>
+    </th>
+  
+    <th>
+      <td>郵便番号</td>
+      <td><%= @cusromers.postal_code %></td>
+    </th>
+    
+    <th>
+      <td>住所</td>
+      <td><%= @cusromers.address %></td>
+    </th>
+    
+    <th>
+      <td>電話番号</td>
+      <td><%= @cusromers.telephone_number %></td>
+    </th>
+    
+    <th>
+      <td>メールアドレス</td>
+      <td><%= @cusromers.email %></td>
+    </th>
+</table>
+
+<h4>配送先一覧</h4>
+  <div class="actions">
+    <button type="button" class="btn btn-primary">
+      一覧を見る
+    </button>
+  </div>
+  
+<h4>注文履歴</h4>
+  <div class="actions">
+    <button type="button" class="btn btn-primary">
+      一覧を見る
+    </button>
+  </div>
+
+
+
