@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row no-gutters">
+  <!--<div class="row no-gutters">-->
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
       <h5 class="text-dark bg-light p-4 mb-0">商品新規登録</h5>
       <div class="form-body p-4">
@@ -15,16 +15,20 @@
         <% end %>
         
         
-        <%= form_with model: @item do |f| %>
-          <%= f.file_field :image, accept: "image/*", class: "w-100" %>
+        <%= form_with model: @items do |f| %>
+          <%= f.file_field :image, accept: "image/*"%>
           <div class="input-group mb-3 mt-4">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="fas fa-building"></i></span>
             </div>
-            <%= f.text_field :name, class:"form-control", placeholder:"商品名" %>
+            <h5>商品名</h5><%= f.text_field :name, class:"form-control", placeholder:"商品名" %>
           </div>
-          <%= f.text_area :introduction, class:"form-control", rows:"3", placeholder:"商品説明" %>
-          <hr>
+          <h5>商品説明</h5><%= f.text_area :introduction, class:"form-control", rows:"3", placeholder:"商品説明" %>
+            <h5>ジャンル</h5>
+            <%= f.select :amount, *[1..10], placeholder:"--選択してください--" %> 
+            <h5>税抜き価格</h5>
+            <%= f.text_field :price, class:"form-control", placeholder:"1000" %>
+            
+          
           <%= f.submit '新規登録', class:"btn btn-lg btn-block btn-info mt-4" %>
         <% end %>
       </div>

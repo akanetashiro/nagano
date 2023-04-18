@@ -5,10 +5,10 @@ class Admin::GenresController < ApplicationController
   end
   
   def create
-    @genre = Genre.new(post_image_params)
-    @genre.user_id = current_user.id
+    @genre = Genre.new
+    @genre.user_id = current_admin
     if @genre.save
-      redirect_to genre_path
+      redirect_to admin_genres_path
     else
       @genres = Genre.all
       render :index

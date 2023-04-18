@@ -6,7 +6,7 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.user_id = current_user.id
+    # @item.user_id = current_user.id
     if @item.save
       redirect_to admin_items_path
     else
@@ -15,7 +15,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def index
-    @items =Item.page(params[:page])
+    @items =Item.all
   end
 
   def show
@@ -29,5 +29,5 @@ end
 
   private
   def list_params
-    params.require(:item).permit(:title, :body, :image)  
+    params.require(:item).permit(:name, :introduction, :price, :is_active, :image)  
   end
