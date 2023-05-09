@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
   
+  namespace :public do
+    get 'orders/new'
+    get 'orders/show'
+    get 'orders/edit'
+  end
+  namespace :admin do
+    get 'order_items/show'
+    get 'order_items/index'
+  end
+  namespace :public do
+    get 'order_items/show'
+    get 'order_items/index'
+  end
+  namespace :public do
+    get 'items/show'
+    get 'items/index'
+  end
   scope module: :public do
   root to: "homes#top"
   end 

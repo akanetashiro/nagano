@@ -1,14 +1,23 @@
 <h3>商品一覧</h3>
 
-<% @items.each do |item| %>
-<div class="container">
-  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <div class="col">
-      <div class="p-3 border bg-light">
-        <%#= item.image %>
-        <%#= item.neme %>
-        <%#= item.price %>
-      </div>
-    </div>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">商品ID</th>
+      <th scope="col">商品名</th>
+      <th scope="col">税抜価格</th>
+      <th scope="col">ジャンル</th>
+      <th scope="col">ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @items.each do |item| %>
+      <td><%= items.id %></td>
+      <td><%= items.name %></td>
+      <td><%= items.price %></td>
+      <td><%= items.genre_id %></td>
+      <td><%= items.is_active %></td>
+    </tr>
+  </tbody>
+</table>
